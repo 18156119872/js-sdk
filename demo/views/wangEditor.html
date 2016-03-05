@@ -83,8 +83,8 @@
                         printLog('on BeforeUpload');
                     },
                     'UploadProgress': function(up, file) {
-                        // 每个文件上传时,处理相关的事情
-                        printLog('on UploadProgress');
+                        // 显示进度条
+                        editor.showUploadProgress(file.percent);
                     },
                     'FileUploaded': function(up, file, info) {
                         // 每个文件上传成功后,处理相关的事情
@@ -112,8 +112,10 @@
                     'UploadComplete': function() {
                         //队列文件处理完毕后,处理相关的事情
                         printLog('on UploadComplete');
-                    }
 
+                        // 隐藏进度条
+                        editor.hideUploadProgress();
+                    }
                     // Key 函数如果有需要自行配置，无特殊需要请注释
                     //,
                     // 'Key': function(up, file) {
