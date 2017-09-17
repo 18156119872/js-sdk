@@ -66,8 +66,15 @@ app.get('/', function(req, res) {
     });
 });
 
-app.get('/wangEditor', function(req, res) {
-    res.render('wangEditor.html', {
+app.get('/wangEditor2', function(req, res) {
+    res.render('wangEditor2.html', {
+        domain: config.Domain,
+        uptoken_url: config.Uptoken_Url
+    });
+});
+
+app.get('/wangEditor3', function(req, res) {
+    res.render('wangEditor3.html', {
         domain: config.Domain,
         uptoken_url: config.Uptoken_Url
     });
